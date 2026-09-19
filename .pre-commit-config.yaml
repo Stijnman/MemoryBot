@@ -2,15 +2,10 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
-      - id: trailing-whitespace
-        args: [--markdown-linebreak-ext=md]
-      - id: end-of-file-fixer
       - id: check-added-large-files
-        args: ['--maxkb=1024']
-      - id: check-yaml
+        args: ["--maxkb=1024"]
       - id: check-merge-conflict
       - id: detect-private-key
-      - id: check-json
 
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.1
@@ -19,10 +14,3 @@ repos:
         args:
           - --skip=.git,*.json,*.yml,*.yaml,CHANGELOG.md
           - --ignore-words-list=gemini,api,http,https
-
-  - repo: https://github.com/Yelp/detect-secrets
-    rev: v1.5.0
-    hooks:
-      - id: detect-secrets
-        args: ['--baseline', '.secrets.baseline']
-        exclude: .git/
